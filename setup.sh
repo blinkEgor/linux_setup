@@ -1,4 +1,6 @@
 #!/bin/bash
+# SPDX-License-Identifier: GPL-3.0-only
+# Copyright (C) 2026 blinkEgor
 
 # I don't know which package manager you use, so I need to define it
 declare -A os_info
