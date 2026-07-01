@@ -158,13 +158,23 @@ install_pkg() {
     esac
 }
 
-# Allow auto-check and auto-install all packages without changing it in the feature.
+# Exceptions section
 # apt feature for fresh packages.
 if [[ "$pkg_manager" == "apt" ]]; then
     echo "Update list of packages..."
     sudo apt update
 fi
 
+# pacman don't include steam by default, so I need to add multilib to install steam from pacman
+if [[ "$pkg_manager" == "pacman" ]]; then
+    if ! grep -q "^\[multilib\]" /etc/pacman.conf; then
+        echo "Including multilib repo..."
+        sudo sed -i '/^#\[multilib\]/,/^#Include/s/^#//' /etc/pacman.conf
+        sudo pacman -Sy
+    fi
+fi
+
+# Allow auto-check and auto-install all packages without changing it in the feature.
 for pkg_array in "${packages[@]}"; do
     declare -n current_pkg="$pkg_array"
     pkg_name="${current_pkg[$pkg_manager]}"
