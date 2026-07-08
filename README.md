@@ -24,19 +24,19 @@ The script uses `sudo` to install packages. You need administrator rights.
 1. Download the script:
 
 ```bash
-wget https://github.com/blinkEgor/linux_setup/releases/download/v1.0.1/setup_2026-07-01_v1.0.1.sh
+wget https://github.com/blinkEgor/linux_setup/releases/download/v1.0.2/setup_2026-07-08_v1.0.2.sh
 ```
 
 2. Make it executable:
-
+2026-07-08
 ```bash
-chmod +x setup_2026-07-01_v1.0.1.sh
+chmod +x setup_2026-07-08_v1.0.2.sh
 ```
 
 3. Run it with `sudo`
 
 ```bash
-sudo ./setup_2026-07-01_v1.0.1.sh
+sudo ./setup_2026-07-08_v1.0.2.sh
 ```
 
 ---
