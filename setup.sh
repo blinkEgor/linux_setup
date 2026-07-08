@@ -177,6 +177,7 @@ fi
 if [[ "$pkg_manager" == "pacman" ]]; then
     if ! grep -q "^\[multilib\]" /etc/pacman.conf; then
         echo "Including multilib repo..."
+        sudo cp /etc/pacman.conf /etc/pacman.conf.bak && \
         sudo sed -i '/^#\[multilib\]/,/^#Include/s/^#//' /etc/pacman.conf
         sudo pacman -Sy
     fi
