@@ -133,12 +133,18 @@ pandoc_pkg[apt]="pandoc"
 pandoc_pkg[dnf]="pandoc"
 pandoc_pkg[pacman]="pandoc"
 
+declare -A inotify_pkg
+inotify_pkg[apt]="inotify-tools"
+inotify_pkg[dnf]="inotify-tools"
+inotify_pkg[pacman]="inotify-tools"
+
 # For comfortable use in cycle. WARN: Don't forget to add new pkg name to this array too.
 packages=(
     cmake_pkg curl_pkg firefox_pkg flatpak_pkg gpp_pkg git_pkg
     mangohud_pkg neovim_pkg openjdk_21_jdk_pkg ripgrep_pkg steam_pkg
     translate_shell_pkg tree_pkg virtualbox_pkg w3m_pkg wget_pkg
     xdotool_pkg xinput_pkg zip_pkg tmux_pkg ffmpeg_pkg pandoc_pkg
+    inotify_pkg
 )
 
 # Wrap all check and install logic to two functions for fast use and quick change in one place
